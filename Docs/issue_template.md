@@ -1,4 +1,4 @@
 
 
 
-[comment]: <> (Thank you for reporting an error)
+Thank you for reporting your error.
