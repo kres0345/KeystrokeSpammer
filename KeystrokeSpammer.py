@@ -5,8 +5,14 @@ i = 1
 keystroke = raw_input("Enter your keystroke: ") #raw_input is a function to ask for user input then sets input as the variable: keystroke
 amount = raw_input("Enter the amount of times you want your keystroke to continue: ")
 delay = raw_input("Enter the time(seconds) you want to wait till the keystroke starts: ")
+enter = raw_input('Enter after each line?(y/n): ')
 isinstance( delay, int )
 #typewrite(keystroke) #This part is the typing part
+if enter == "y":
+    print 'Selection confirmed'
+else:
+    print 'Selection confirmed'
+
 
 #The following part is the end part.
 delay = str(delay) #Converts the variable so it can be used in the next command. The reason is beyond my understanding.
