@@ -1,6 +1,6 @@
 #!/usr/local/bin/python
 from pyautogui import press, typewrite, hotkey #Imports PyAutoGui whitch is need for this to work
-import time #Imports time whitch is needed as a wait command
+import time, sys #Imports time whitch is needed as a wait command
 i = 1
 keystroke = raw_input("Enter your keystroke: ") #raw_input is a function to ask for user input then sets input as the variable: keystroke
 amount = raw_input("Enter the amount of times you want your keystroke to continue: ")
@@ -20,9 +20,24 @@ print "Starting keystroke in "+delay+" second(s)" #Prints how long till the the 
 delay = float(delay) #Converts it so it works as a float value. Still beyond my reasoning.
 time.sleep(delay)
 
-while i < int(amount):
-    print i #Print the number you are at
-    typewrite(keystroke) #The macro
-    i = i + 1 #Ups a variable by 1
-typewrite(keystroke) #Uses macro 1 extra time
-time.sleep(5) #Sleeps before exit
+if enter == "y":
+    while i < int(amount):
+        print i
+        typewrite(keystroke)
+        typewrite('\n')
+        i = i + 1
+    typewrite(keystroke)
+    typewrite('\n')
+    print i
+    print("Done\nExiting in 5 seconds")
+    time.sleep(5)
+    sys.exit()
+
+else:
+    while i < int(amount):
+        print i #Print the number you are at
+        typewrite(keystroke) #The macro
+        i = i + 1 #Ups a variable by 1
+    print i
+    typewrite(keystroke) #Uses macro 1 extra time
+    time.sleep(5) #Sleeps before exit
